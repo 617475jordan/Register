@@ -15,13 +15,14 @@ public:
 	~Register();
 
 private:
-	void initalize();
-	std::string currentTime();
-	void  outputShow(QString m_qstr);
-	bool  outPutPassword(std::string m_password);
+	void                   initalize();
+	std::string            currentTime();
+	void                   outputShow(QString m_qstr);
+	bool                   outPutPassword(std::string m_password);
 private:
 	Ui::RegisterClass ui;
 	std::vector<std::string>   m_passwordData;
+	string                     path = "data\\data.index";
 private slots:
 void on_clickedPushButton_clicked();
 void on_clearPushButton_clicked();

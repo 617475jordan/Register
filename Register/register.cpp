@@ -18,11 +18,11 @@ Register::~Register()
 
 void Register::initalize()
 {
-	std::ifstream m_infile("data\\data.index", std::ios::in );
+	std::ifstream m_infile(path, std::ios::in);
 	if (!m_infile.is_open())
 	{
 		m_infile.close();
-		std::ofstream m_outfile("data\\data.index", std::ios::out);
+		std::ofstream m_outfile(path, std::ios::out);
 		m_outfile.close();
 	}
 	else
@@ -67,10 +67,10 @@ void Register::outputShow(QString m_qstr)
 
 bool Register::outPutPassword(std::string m_password)
 {
-	std::ofstream m_outfile("data\\data.index",  std::ios_base::app);
+	std::ofstream m_outfile(path, std::ios_base::app);
 	if (!m_outfile.is_open())
 	{
-		m_outfile.open("data\\data.index", std::ios::out);
+		m_outfile.open(path, std::ios::out);
 	}
 	m_outfile << m_password << endl;
 	m_outfile.close();

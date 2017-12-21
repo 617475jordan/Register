@@ -1,7 +1,13 @@
-﻿Build started 2017-12-20 11:42:43.
-     1>Project "F:\NI\Practice\MicroBridge\LPR\20171206\Register\Register\Register.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2017-12-21 18:25:51.
+     1>Project "F:\NI\Practice\MicroBridge\LPR\20171220\Register\Register\Register.vcxproj" on node 2 (Rebuild target(s)).
+     1>CustomBuild:
+         Moc'ing register.h...
+         Uic'ing register.ui...
+         Rcc'ing register.qrc...
+     1>RCC : warning : No resources in 'F:\NI\Practice\MicroBridge\LPR\20171220\Register\Register\register.qrc'.
+         
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_register.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_register.cpp, GeneratedFiles\Release\moc_register.cpp.
-     1>ClCompile:
+       ClCompile:
          E:\NI\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IE:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\include /I.\GeneratedFiles\Release /IE:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\include\QtCore /IE:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\include\QtGui /IE:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\include\QtWidgets /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /D _CRT_SECURE_NO_WARNINGS /D _BOOST_LINK_ /D _WINSOCK_DEPRECATED_NO_WARNINGS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt AES.cpp Base64.cpp GeneratedFiles\Release\moc_register.cpp main.cpp password.cpp register.cpp
          AES.cpp
      1>AES.cpp(1188): warning C4804: '<=' : unsafe use of type 'bool' in operation
@@ -14,16 +20,16 @@
          E:\NI\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IE:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\include /I.\GeneratedFiles\Release /IE:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\include\QtCore /IE:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\include\QtGui /IE:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\include\QtWidgets /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /D _CRT_SECURE_NO_WARNINGS /D _BOOST_LINK_ /D _WINSOCK_DEPRECATED_NO_WARNINGS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\qrc_register.cpp
          qrc_register.cpp
        Link:
-         E:\NI\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\NI\Practice\MicroBridge\LPR\20171206\Register\Win32\Release\\Register.exe" /NOLOGO /LIBPATH:E:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib freeglut.lib glew32.lib glfw3dll.lib kinect20.lib Identification.lib FaceDetection.lib FaceAlignment.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"F:\NI\Practice\MicroBridge\LPR\20171206\Register\Win32\Release\Register.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\NI\Practice\MicroBridge\LPR\20171206\Register\Win32\Release\Register.lib" /MACHINE:X86 /SAFESEH Release\AES.obj
+         E:\NI\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\NI\Practice\MicroBridge\LPR\20171220\Register\Win32\Release\\Register.exe" /NOLOGO /LIBPATH:E:\NI\Qt5.5.0_vs2013_x86\5.5\msvc2013\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib freeglut.lib glew32.lib glfw3dll.lib kinect20.lib Identification.lib FaceDetection.lib FaceAlignment.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"F:\NI\Practice\MicroBridge\LPR\20171220\Register\Win32\Release\Register.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\NI\Practice\MicroBridge\LPR\20171220\Register\Win32\Release\Register.lib" /MACHINE:X86 /SAFESEH Release\AES.obj
          Release\Base64.obj
          Release\qrc_register.obj
          Release\moc_register.obj
          Release\main.obj
          Release\password.obj
          Release\register.obj
-         Register.vcxproj -> F:\NI\Practice\MicroBridge\LPR\20171206\Register\Win32\Release\Register.exe
-     1>Done Building Project "F:\NI\Practice\MicroBridge\LPR\20171206\Register\Register\Register.vcxproj" (Build target(s)).
+         Register.vcxproj -> F:\NI\Practice\MicroBridge\LPR\20171220\Register\Win32\Release\Register.exe
+     1>Done Building Project "F:\NI\Practice\MicroBridge\LPR\20171220\Register\Register\Register.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:12.03
+Time Elapsed 00:00:06.80
