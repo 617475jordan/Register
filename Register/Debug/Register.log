@@ -1,4 +1,4 @@
-﻿Build started 2017-12-21 18:25:28.
+﻿Build started 2017-12-21 23:08:42.
      1>Project "F:\NI\Practice\MicroBridge\LPR\20171220\Register\Register\Register.vcxproj" on node 2 (Rebuild target(s)).
      1>CustomBuild:
          Moc'ing register.h...
@@ -32,4 +32,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:08.52
+Time Elapsed 00:00:06.37

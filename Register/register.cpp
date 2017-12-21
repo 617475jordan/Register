@@ -80,48 +80,97 @@ bool Register::outPutPassword(std::string m_password)
 void Register::on_clickedPushButton_clicked()
 {
 	ui.outputPlainTextEdit->clear();
-	password *m_password = new password();
-	std::vector<int> m_inputData;
-	m_inputData = m_password->createPassword();
-	char m_outPutPassword[128];
-	if (m_inputData.size() < 128)//密码长度
+	std::string m_outPutResult;
+	bool flag = false;
+	while (flag == false)
 	{
-		m_password = NULL;
-		delete[] m_password;
-		return;
-	}
-	for (int i = 0; i < m_inputData.size(); i++)
-	{
-		//if (i>0 && i % 4 == 0)
-		//{
-		//	m_outPutPassword = m_outPutPassword /*+ "-"*/;
-		//}
-
-		m_outPutPassword [i]= (char)m_inputData[i];
-		
-	}
-	for (int i = 0; i < m_passwordData.size(); i++)
-	{
-		if (m_outPutPassword == m_passwordData[i]  /*||m_outPutPassword.length()<128*/)
+		password *m_password = new password();
+		std::vector<int> m_inputData;
+		m_inputData = m_password->createPassword();
+		char m_outPutPassword[128];
+		if (m_inputData.size() < 128)//密码长度
 		{
-			QMessageBox::information(this, QString::fromLocal8Bit("友情提示"), QString::fromLocal8Bit("激活码无效"));
-			return;
+			m_password = NULL;
+			delete[] m_password;
+			continue;
+			//return;
+		}
+		for (int i = 0; i < m_inputData.size(); i++)
+		{
+			//if (i>0 && i % 4 == 0)
+			//{
+			//	m_outPutPassword = m_outPutPassword /*+ "-"*/;
+			//}
+
+			m_outPutPassword[i] = (char)m_inputData[i];
+
+		}
+
+		AES *m_aes = new AES();
+		m_outPutResult.clear();
+		m_outPutResult = m_aes->EncryptionAES(m_outPutPassword, 0);
+		int m_len = 192;
+		bool m_currentFlag = false;
+		for (int i = 0; i < m_passwordData.size(); i++)
+		{
+			if (flag == true)
+			{
+				break;
+			}
+			if (m_currentFlag == true)
+			{
+				continue;
+			}
+			if (m_outPutResult == m_passwordData[i]  /*||m_outPutPassword.length()<128*/)
+			{
+				m_aes = NULL;
+				delete[] m_aes;
+				m_currentFlag = true;
+				m_outPutResult.clear();
+				//break;
+				//QMessageBox::information(this, QString::fromLocal8Bit("友情提示"), QString::fromLocal8Bit("激活码无效"));
+				//return;
+			}
+			else
+			{
+				int m_count = 0;
+				for (int j = 0; j < m_len; j++)
+				{
+					if (m_outPutResult[j] == m_passwordData[i][j])
+					{
+						m_count++;
+					}
+				}
+				if (m_count>m_len*3.0 / 5.0)
+				{
+					m_currentFlag = true;
+					m_aes = NULL;
+					delete[] m_aes;
+					m_outPutResult.clear();
+					//break;
+					//QMessageBox::information(this, QString::fromLocal8Bit("友情提示"), QString::fromLocal8Bit("激活码无效"));
+					//return;
+				}
+				else
+				{
+					flag = true;
+					m_aes = NULL;
+					delete[] m_aes;
+				}
+			}
 		}
 	}
-	AES *m_aes = new AES();
-	
-	std::string m_outPutResult = m_aes->EncryptionAES(m_outPutPassword, 0);
-	m_aes = NULL;
-	delete[] m_aes;
+	//m_aes = NULL;
+	//delete[] m_aes;
 	if (!outPutPassword(m_outPutResult))
 	{
 		return;
 	}
 	QString m_qstr = QString::fromStdString(m_outPutResult);
 	outputShow(m_qstr);
-	m_password = NULL;
-	delete[] m_password;
-	m_inputData.clear();
+	//m_password = NULL;
+	//delete[] m_password;
+	//m_inputData.clear();
 	m_outPutResult.clear();
 	m_qstr.clear();
 }

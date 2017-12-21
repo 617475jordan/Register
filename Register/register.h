@@ -23,6 +23,7 @@ private:
 	Ui::RegisterClass ui;
 	std::vector<std::string>   m_passwordData;
 	string                     path = "data\\data.index";
+	double                     m_fThreshold = 0.2;
 private slots:
 void on_clickedPushButton_clicked();
 void on_clearPushButton_clicked();
